@@ -1,16 +1,1 @@
-<div class="container">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="">GLR</a>
-      </div>
-      <div *ngIf="isLoggedIn">
-        <p class="navbar-text navbar-right">Logged In: {{user_displayName}}  {{user_email}}</p>
-      </div>
-      <div *ngIf="!isLoggedIn">
-        <p class="navbar-text navbar-right">Logged Out</p>
-      </div>
-    </div>
-  </nav>
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>

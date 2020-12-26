@@ -11,7 +11,8 @@ export const environment = {
     storageBucket: "glr-app.appspot.com",
     messagingSenderId: "944661114894",
     appId: "1:944661114894:web:2f966349d2e91154a70c5f"
-  }
+  },
+  googleOAuthClientId: '620347630025-2ejc2657vjvlvdk2kuo0i734eai10i8a.apps.googleusercontent.com',
 };
 
 /*

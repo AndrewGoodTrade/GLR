@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 
 @Injectable({
   providedIn: 'root'
@@ -8,17 +7,14 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 export class AuthService {
 
   constructor(
-    public af: AngularFire
+    public socialAuthService: SocialAuthService,
   ) { }
 
   loginWithGoogle() {
-    return this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup
-    });
+    return this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
   logout() {
-    return this.af.auth.logout();
+    return this.socialAuthService.signOut();
   }
 }
