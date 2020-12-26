@@ -10,12 +10,9 @@ import { AuthService } from './../services/auth.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  isLoading = false;
   public userName: string;
 
   constructor(
-    private socialAuthService: SocialAuthService,
-    private router: Router,
     private authService: AuthService
   ) { }
 
@@ -23,16 +20,8 @@ export class HomePageComponent implements OnInit {
     this.userName = this.authService.getUserName();
   }
 
-  logout() {
-    try{
-      this.isLoading = true;
-      this.socialAuthService.signOut().then((res) => {
-        this.router.navigate(['']);
-      })
-    } catch (e) {
-      console.log(e.error.message);
-    } finally {
-      this.isLoading = false;
-    }
+  logout(): void {
+    this.authService.SignOut();
   }
+
 }

@@ -4,7 +4,15 @@
 
 export const environment = {
   production: false,
-  googleOAuthClientId: '620347630025-2ejc2657vjvlvdk2kuo0i734eai10i8a.apps.googleusercontent.com'
+  googleOAuthClientId: '620347630025-2ejc2657vjvlvdk2kuo0i734eai10i8a.apps.googleusercontent.com',
+  firebase : {
+    apiKey: "AIzaSyCgD2E0itQhyQ7CXVrPDqhHVMQpnZX6T9U",
+    authDomain: "glr-app.firebaseapp.com",
+    projectId: "glr-app",
+    storageBucket: "glr-app.appspot.com",
+    messagingSenderId: "944661114894",
+    appId: "1:944661114894:web:2f966349d2e91154a70c5f"
+  }
 };
 
 /*

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "glr-app": {
+      "hosting": {
+        "glr-app": [
+          "glr-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "glr-app"
+  }
+}

@@ -10,29 +10,15 @@ import { AuthService } from './../services/auth.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  isLoading = false;
 
   constructor(
-    private socialAuthService: SocialAuthService,
-    private router: Router,
     private authService: AuthService
   ) { }
 
   ngOnInit(): void {
   }
 
-  login() {
-    try{
-      this.isLoading = true;
-      this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((res) => {
-        console.log(res);
-        this.authService.setUserName(res.name);
-        this.router.navigate(['home']);
-      })
-    } catch (e) {
-      console.log(e.error.message);
-    } finally {
-      this.isLoading = false;
-    }
+  login(): void {
+    this.authService.GoogleAuth();
   }
 }
