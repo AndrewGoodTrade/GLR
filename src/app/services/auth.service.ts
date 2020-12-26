@@ -1,15 +1,14 @@
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { auth } from 'firebase/app';
 import { Injectable, NgZone } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, CanActivate } from '@angular/router';
 import { AngularFireDatabase} from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements CanActivate {
   public userName: string;
 
   constructor(
@@ -55,5 +54,13 @@ export class AuthService {
     };
     const userRef = this.db.list('Users');
     userRef.push(registerUser);
+  }
+
+  canActivate(): boolean {
+    if (this.userName !== undefined) {
+      return true;
+    }
+    this.router.navigate(['']);
+    return false;
   }
 }
