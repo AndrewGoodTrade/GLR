@@ -5,7 +5,7 @@
         <a class="navbar-brand" href="">GLR</a>
       </div>
       <div *ngIf="isLoggedIn">
-        <p class="navbar-text navbar-right">Logged In: ({{user_displayName}}  {{user_email}})</p>
+        <p class="navbar-text navbar-right">Logged In: {{user_displayName}}  {{user_email}}</p>
       </div>
       <div *ngIf="!isLoggedIn">
         <p class="navbar-text navbar-right">Logged Out</p>

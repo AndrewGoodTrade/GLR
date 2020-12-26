@@ -9,9 +9,9 @@ import { AuthService } from './provider/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private isLoggedIn: Boolean;
-  private user_displayName: String;
-  private user_email: String;
+  public isLoggedIn: Boolean;
+  public user_displayName: String;
+  public user_email: String;
   constructor(
     public authService: AuthService,
     private router: Router
